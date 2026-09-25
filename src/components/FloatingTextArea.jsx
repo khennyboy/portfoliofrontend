@@ -8,7 +8,7 @@ const FloatingTextarea = ({ label, error, ...props }) => {
 
   return (
     <Box>
-      <Box position="relative" h="120px" w="full">
+      <Box position="relative" h="140px" w="full" overflow={"hidden"}>
         <Textarea
           {...props}
           placeholder=" "
@@ -17,11 +17,11 @@ const FloatingTextarea = ({ label, error, ...props }) => {
           border="1px solid"
           borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
           rounded="xl"
-          h="120px"
+          h="full"
           pt="24px"
           pb="6px"
           resize="none"
-          fontSize="md"
+          fontSize={{ base: "sm", md: "md" }}
           _focus={{
             bg: inputBg,
             borderColor: "purple.500",

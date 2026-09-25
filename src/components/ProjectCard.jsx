@@ -20,6 +20,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <Box
+      h={"full"}
       w={"full"}
       maxW={"450px"}
       justifySelf={'center'}

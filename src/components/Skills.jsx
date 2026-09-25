@@ -9,6 +9,8 @@ import {
 } from "@chakra-ui/react";
 import skills from "../data/skills.js";
 import { useColorMode } from "./ui/color-mode.jsx";
+import { AnimatedSection } from "./AnimatedSection.jsx";
+import { scaleUp } from "../utils/animation.js";
 
 export default function Skills() {
   const { colorMode } = useColorMode();
@@ -36,34 +38,36 @@ export default function Skills() {
           gap={{ base: 4, md: 5 }}
         >
           {skills.map((s) => (
-            <Flex
-              key={s.label}
-              direction="column"
-              align="center"
-              justify="center"
-              textAlign="center"
-              bg={cardBg}
-              border="1px solid"
-              borderColor={border}
-              borderRadius="xl"
-              py={5}
-              px={2}
-              transition="transform 0.15s ease, border-color 0.15s ease"
-              _hover={{
-                transform: "translateY(-3px)",
-                borderColor: "brand.400",
-              }}
-            >
-              <Icon
-                as={s.icon}
-                boxSize={8}
-                mb={3}
-                color={colorMode === "dark" ? "whiteAlpha.800" : "gray.700"}
-              />
-              <Text fontSize="sm" fontWeight={600}>
-                {s.label}
-              </Text>
-            </Flex>
+            <AnimatedSection variants={scaleUp}>
+              <Flex
+                key={s.label}
+                direction="column"
+                align="center"
+                justify="center"
+                textAlign="center"
+                bg={cardBg}
+                border="1px solid"
+                borderColor={border}
+                borderRadius="xl"
+                py={5}
+                px={2}
+                transition="transform 0.15s ease, border-color 0.15s ease"
+                _hover={{
+                  transform: "translateY(-3px)",
+                  borderColor: "brand.400",
+                }}
+              >
+                <Icon
+                  as={s.icon}
+                  boxSize={8}
+                  mb={3}
+                  color={colorMode === "dark" ? "whiteAlpha.800" : "gray.700"}
+                />
+                <Text fontSize="sm" fontWeight={600}>
+                  {s.label}
+                </Text>
+              </Flex>
+            </AnimatedSection>
           ))}
         </SimpleGrid>
       </Container>

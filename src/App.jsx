@@ -9,7 +9,7 @@ import { Toaster } from "./components/ui/toaster.jsx";
 
 export default function App() {
   return (
-    <Box>
+    <Box overflow={"hidden"}>
       <Navbar />
       <Hero />
       <Skills />

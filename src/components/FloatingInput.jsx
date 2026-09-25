@@ -20,7 +20,7 @@ const FloatingInput = ({ label, error, type = "text", ...props }) => {
           h="52px"
           pt="22px"
           pb="6px"
-          fontSize="md"
+          fontSize={{ base: "sm", md: "md" }}
           _focus={{
             bg: inputBg,
             boxShadow: "0 0 0 2px var(--chakra-colors-purple-500)",
