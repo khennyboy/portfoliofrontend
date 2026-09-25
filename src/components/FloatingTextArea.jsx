@@ -8,27 +8,54 @@ const FloatingTextarea = ({ label, error, ...props }) => {
 
   return (
     <Box>
-      <Box position="relative" h="150px" w="full" overflow={"hidden"}>
+      <Box
+        position="relative"
+        h="150px"
+        w="full"
+        rounded="xl"
+        overflow="hidden" 
+        border="1px solid"
+        borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+        bg={inputBg}
+        _focusWithin={{
+          borderColor: "purple.500",
+          boxShadow: "0 0 0 1px var(--chakra-colors-purple-500)",
+        }}
+      >
         <Textarea
           {...props}
           placeholder=" "
-          bg={inputBg}
+          bg="transparent"
           color={inputColor}
-          outline={"none"}
-          border="1px solid"
-          borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
-          rounded="xl"
-          h="150px"
+          border="none"
+          outline="none"
+          rounded="none"
+          h="full"
+          w="full"
           pt="24px"
-          pb="6px"
+          pb="8px"
+          pl="16px"
+          pr="16px" // Prevents text & scrollbar from sticking directly to the right border
           resize="none"
           fontSize={{ base: "sm", md: "md" }}
           _focus={{
-            bg: inputBg,
-            borderColor: "purple.500",
-            boxShadow: "0 0 0 1px var(--chakra-colors-purple-500)",
+            boxShadow: "none",
+            outline: "none",
           }}
           css={{
+            WebkitOverflowScrolling: "touch",
+            /* Sleek, inset scrollbar styling */
+            "&::-webkit-scrollbar": {
+              width: "5px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: "rgba(255, 255, 255, 0.25)",
+              borderRadius: "10px",
+            },
+            "&::-webkit-scrollbar-track": {
+              backgroundColor: "transparent",
+            },
+            /* Floating Label CSS rules */
             "&:focus + label, &:not(:placeholder-shown) + label": {
               transform: "translateY(-12px) scale(0.75)",
               fontSize: "0.8rem",
