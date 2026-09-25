@@ -17,7 +17,12 @@ export default function Contact() {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <Box as="section" id="contact" py={{ base: 16, md: 24 }}>
+    <Box
+      as="section"
+      id="contact"
+      py={{ base: 16, md: 24 }}
+      scrollMargin={"20px"}
+    >
       <Container maxW="6xl" textAlign="center">
         <Text
           color="brand.400"
@@ -64,5 +69,3 @@ export default function Contact() {
     </Box>
   );
 }
-
-
