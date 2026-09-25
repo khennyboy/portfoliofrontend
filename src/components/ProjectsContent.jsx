@@ -11,9 +11,9 @@ const ProjectsContent = () => {
     <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={{ base: 6, md: 8 }}>
       {data.map((p, index) => {
         return (
-          <AnimatedSection variants={scaleUp}>
+          // <AnimatedSection variants={scaleUp}>
             <ProjectCard key={p.title} project={p} />
-          </AnimatedSection>
+          // </AnimatedSection>
         );
       })}
     </SimpleGrid>

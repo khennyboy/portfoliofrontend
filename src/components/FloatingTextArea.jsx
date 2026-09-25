@@ -8,12 +8,14 @@ const FloatingTextarea = ({ label, error, ...props }) => {
 
   return (
     <Box>
-      <Box position="relative" h="140px" w="full" overflow={"hidden"}>
+      <Box position="relative" h="140px" w="full" >
         <Textarea
+          overflow={"hidden"}
           {...props}
           placeholder=" "
           bg={inputBg}
           color={inputColor}
+          outline={"none"}
           border="1px solid"
           borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
           rounded="xl"
