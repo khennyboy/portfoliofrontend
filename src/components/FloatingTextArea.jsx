@@ -8,9 +8,8 @@ const FloatingTextarea = ({ label, error, ...props }) => {
 
   return (
     <Box>
-      <Box position="relative" h="140px" w="full" >
+      <Box position="relative" h="140px" w="full">
         <Textarea
-          overflow={"hidden"}
           {...props}
           placeholder=" "
           bg={inputBg}
