@@ -17,7 +17,7 @@ const FloatingTextarea = ({ label, error, ...props }) => {
           border="1px solid"
           borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
           rounded="xl"
-          h="full"
+          h="140px"
           pt="24px"
           pb="6px"
           resize="none"
