@@ -3,6 +3,8 @@ import useGetProjects from "../hooks/getProject";
 import ProjectCard from "./ProjectCard";
 import { AnimatedSection } from "./AnimatedSection";
 import { scaleUp, scaleUpTransition } from "../utils/animation";
+import FallbackSkeleton from "./FallbackSkeleton";
+import { ProjectCardSkeleton } from "./Skeleton";
 
 const ProjectsContent = () => {
   const { data } = useGetProjects();
@@ -17,7 +19,8 @@ const ProjectsContent = () => {
             transition={scaleUpTransition}
             delay={index * 0.08}
           >
-            <ProjectCard project={p} />
+            <ProjectCardSkeleton/>
+            {/* <ProjectCard project={p} /> */}
           </AnimatedSection>
         );
       })}

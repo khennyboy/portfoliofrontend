@@ -3,6 +3,7 @@ import { useColorMode } from "./ui/color-mode";
 
 export function ProjectCardSkeleton() {
   const { colorMode } = useColorMode();
+
   const cardBg = colorMode === "dark" ? "surface.darkCard" : "white";
   const border = colorMode === "dark" ? "whiteAlpha.100" : "blackAlpha.100";
 
