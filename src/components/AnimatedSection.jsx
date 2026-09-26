@@ -6,22 +6,15 @@ const MotionBox = chakra(motion.div);
 export const AnimatedSection = ({
   children,
   variants,
-  delay = 0,
-  transition = {},
   ...props
 }) => {
   const shouldReduceMotion = useReducedMotion();
-  const combinedTransition = {
-    ...transition,
-    delay,
-  };
 
   return (
     <MotionBox
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.15 }}
-      transition={combinedTransition}
+      viewport={{ once: false, amount: "some" }}
       variants={shouldReduceMotion ? undefined : variants}
       {...props}
     >

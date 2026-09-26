@@ -49,7 +49,7 @@ const customConfig = defineConfig({
         surface: {
           dark: { value: "#0A0F1E" },
           darkAlt: { value: "#111827" },
-          darkCard: { value: "#1e2c48" },
+          darkCard: { value: "#1e2238" },
           light: { value: "#FFFFFF" },
           lightAlt: { value: "#F6F6F9" },
           lightCard: { value: "#FAFAFC" },
