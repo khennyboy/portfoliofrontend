@@ -11,6 +11,7 @@ import { FiDownload, FiMessageSquare } from "react-icons/fi";
 import { slideInLeft, slideInRight } from "../utils/animation";
 import { AnimatedSection } from "./AnimatedSection";
 import { useColorMode } from "./ui/color-mode";
+import { Typewriter } from "./TypeWriter";
 
 export default function Hero() {
   const { colorMode } = useColorMode();
@@ -47,15 +48,18 @@ export default function Hero() {
                 mb={3}
               >
                 Hi, I'm{" "}
-                <Text as="span" color="brand.400">
-                  Sheriff Abdullateef
-                </Text>
+                <Typewriter
+                  text="Sheriff Abdullateef"
+                  speed={60}
+                  startDelay={300}
+                  color="brand.400"
+                />
               </Heading>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
+                lineHeight={"shorter"}
                 color={colorMode === "dark" ? "whiteAlpha.700" : "gray.600"}
                 maxW="500px"
-                mx={{ base: "auto", md: 0 }}
                 mb={8}
               >
                 Frontend Engineer specializing in React, Next.js, and
