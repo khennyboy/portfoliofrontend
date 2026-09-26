@@ -14,7 +14,7 @@ const ProjectsContent = () => {
           <AnimatedSection
             variants={scaleUp}
             transition={scaleUpTransition}
-            delay={index*0.08}
+            delay={index * 0.08}
           >
             <ProjectCard key={p._id} project={p} />
           </AnimatedSection>
