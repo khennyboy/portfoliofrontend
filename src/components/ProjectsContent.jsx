@@ -1,10 +1,8 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import useGetProjects from "../hooks/getProject";
-import ProjectCard from "./ProjectCard";
-import { AnimatedSection } from "./AnimatedSection";
 import { scaleUp, scaleUpTransition } from "../utils/animation";
-import FallbackSkeleton from "./FallbackSkeleton";
-import { ProjectCardSkeleton } from "./Skeleton";
+import { AnimatedSection } from "./AnimatedSection";
+import ProjectCard from "./ProjectCard";
 
 const ProjectsContent = () => {
   const { data } = useGetProjects();
@@ -17,10 +15,9 @@ const ProjectsContent = () => {
             key={p._id}
             variants={scaleUp}
             transition={scaleUpTransition}
-            delay={index * 0.08}
+            // delay={index * 0.08}
           >
-            <ProjectCardSkeleton/>
-            {/* <ProjectCard project={p} /> */}
+            <ProjectCard project={p} />
           </AnimatedSection>
         );
       })}
