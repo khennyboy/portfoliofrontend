@@ -14,7 +14,7 @@ export const AnimatedSection = ({
     <MotionBox
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: "some" }}
+      viewport={{ once: true, amount: "some" }}
       variants={shouldReduceMotion ? undefined : variants}
       {...props}
     >
