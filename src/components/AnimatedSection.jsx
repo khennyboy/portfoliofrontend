@@ -11,13 +11,17 @@ export const AnimatedSection = ({
   ...props
 }) => {
   const shouldReduceMotion = useReducedMotion();
+  const combinedTransition = {
+    ...transition,
+    delay,
+  };
 
   return (
     <MotionBox
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ ...transition, delay }}
+      transition={combinedTransition}
       variants={shouldReduceMotion ? undefined : variants}
       {...props}
     >
