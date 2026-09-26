@@ -43,7 +43,7 @@ export default function Hero() {
               </Text>
               <Heading
                 as="h1"
-                fontSize={{ base: "3xl", md: "4xl" }}
+                fontSize={{ base: "2xl", md: "4xl" }}
                 lineHeight={1.1}
                 mb={3}
               >

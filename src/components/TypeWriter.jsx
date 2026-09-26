@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 
 export const Typewriter = ({ text, speed = 60, startDelay = 0, ...props }) => {
   const [displayed, setDisplayed] = useState("");
+  const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
     setDisplayed("");
+    setIsDone(false);
     let i = 0;
     let interval;
 
@@ -13,7 +15,10 @@ export const Typewriter = ({ text, speed = 60, startDelay = 0, ...props }) => {
       interval = setInterval(() => {
         i += 1;
         setDisplayed(text.slice(0, i));
-        if (i >= text.length) clearInterval(interval);
+        if (i >= text.length) {
+          clearInterval(interval);
+          setIsDone(true);
+        }
       }, speed);
     }, startDelay);
 
@@ -26,16 +31,18 @@ export const Typewriter = ({ text, speed = 60, startDelay = 0, ...props }) => {
   return (
     <Text as="span" {...props}>
       {displayed}
-      <Text
-        as="span"
-        display="inline-block"
-        w="2px"
-        h="1em"
-        bg="currentColor"
-        ml="2px"
-        verticalAlign="middle"
-        style={{ animation: "blink-cursor 0.9s step-end infinite" }}
-      />
+      {!isDone && (
+        <Text
+          as="span"
+          display="inline-block"
+          w="2px"
+          h="1em"
+          bg="currentColor"
+          ml="2px"
+          verticalAlign="middle"
+          style={{ animation: "blink-cursor 0.9s step-end infinite" }}
+        />
+      )}
       <style>{`
         @keyframes blink-cursor {
           0%, 100% { opacity: 1; }
