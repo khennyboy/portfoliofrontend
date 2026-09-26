@@ -12,11 +12,12 @@ const ProjectsContent = () => {
       {data.map((p, index) => {
         return (
           <AnimatedSection
+            key={p._id}
             variants={scaleUp}
             transition={scaleUpTransition}
             delay={index * 0.08}
           >
-            <ProjectCard key={p._id} project={p} />
+            <ProjectCard project={p} />
           </AnimatedSection>
         );
       })}
