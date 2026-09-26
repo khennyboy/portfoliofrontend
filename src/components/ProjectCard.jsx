@@ -12,18 +12,19 @@ import {
 } from "@chakra-ui/react";
 import { useColorMode } from "./ui/color-mode";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import React from "react";
 
-export default function ProjectCard({ project }) {
+function ProjectCard({ project }) {
   const { colorMode } = useColorMode();
   const cardBg = colorMode === "dark" ? "surface.darkCard" : "white";
   const border = colorMode === "dark" ? "whiteAlpha.100" : "blackAlpha.100";
 
   return (
     <Box
-      // h={"full"}
+      h={"full"}
       w={"full"}
       maxW={"450px"}
-      justifySelf={'center'}
+      justifySelf={"center"}
       display="flex"
       flexDirection="column"
       bg={cardBg}
@@ -31,7 +32,7 @@ export default function ProjectCard({ project }) {
       borderColor={border}
       borderRadius="2xl"
       overflow="hidden"
-      shadow={'sm'}
+      shadow={"sm"}
       transition="transform 0.18s ease, box-shadow 0.18s ease"
       _hover={{
         transform: "translateY(-4px)",
@@ -105,3 +106,5 @@ export default function ProjectCard({ project }) {
     </Box>
   );
 }
+
+export default React.memo(ProjectCard);

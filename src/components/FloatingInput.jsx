@@ -8,22 +8,33 @@ const FloatingInput = ({ label, error, type = "text", ...props }) => {
 
   return (
     <Box>
-      <Box position="relative" h="52px" w="full">
+      <Box
+        position="relative"
+        h="52px"
+        w="full"
+        rounded="xl"
+        overflow="hidden"
+        border="1px solid"
+        borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+        bg={inputBg}
+        _focusWithin={{
+          borderColor: "purple.500",
+          boxShadow: "0 0 0 1px var(--chakra-colors-purple-500)",
+        }}
+      >
         <Input
           {...props}
           type={type}
           placeholder=" "
-          bg={inputBg}
+          bg="transparent"
           color={inputColor}
-          border="none"
-          rounded="xl"
           h="52px"
           pt="22px"
           pb="6px"
           fontSize={{ base: "sm", md: "md" }}
           _focus={{
-            bg: inputBg,
-            boxShadow: "0 0 0 2px var(--chakra-colors-purple-500)",
+            outline: "none",
+            boxShadow: "none",
           }}
           css={{
             "&:focus + label, &:not(:placeholder-shown) + label": {

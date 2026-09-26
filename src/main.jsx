@@ -6,6 +6,7 @@ import { Provider } from "./components/ui/provider.jsx";
 import { ErrorBoundary } from "react-error-boundary";
 import "./index.css";
 import ErrorFallback from "./components/ErrorsFallback.jsx";
+import ScrollLinked from "./components/ScrollLinked.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,7 +22,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <Provider>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <App />
+          <ScrollLinked>
+            <App />
+          </ScrollLinked>
         </ErrorBoundary>
       </Provider>
     </QueryClientProvider>

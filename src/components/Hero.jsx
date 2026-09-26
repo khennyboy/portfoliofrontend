@@ -19,7 +19,7 @@ export default function Hero() {
     <Box as="section" id="top">
       <Container maxW="6xl" minH="dvh" display="flex">
         <Flex
-          pt={{ base: 4, md: 0 }}
+          pt={{ base: 6, md: 0 }}
           flex={1}
           direction={{ base: "column-reverse", md: "row" }}
           alignItems="center"
