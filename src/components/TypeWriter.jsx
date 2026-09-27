@@ -43,12 +43,6 @@ export const Typewriter = ({ text, speed = 60, startDelay = 0, ...props }) => {
           style={{ animation: "blink-cursor 0.9s step-end infinite" }}
         />
       )}
-      <style>{`
-        @keyframes blink-cursor {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-      `}</style>
     </Text>
   );
 };

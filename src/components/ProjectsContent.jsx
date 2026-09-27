@@ -8,7 +8,7 @@ const ProjectsContent = () => {
   const { data } = useGetProjects();
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={{ base: 6, md: 8 }}>
+    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
       {data.map((p, index) => (
         <AnimatedSection key={p._id} variants={slideUp} custom={index}>
           <ProjectCard project={p} />

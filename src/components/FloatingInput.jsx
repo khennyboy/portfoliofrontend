@@ -14,12 +14,11 @@ const FloatingInput = ({ label, error, type = "text", ...props }) => {
         w="full"
         rounded="xl"
         overflow="hidden"
-        border="1px solid"
+        border="2px solid"
         borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
         bg={inputBg}
         _focusWithin={{
-          borderColor: "purple.500",
-          boxShadow: "0 0 0 1px var(--chakra-colors-purple-500)",
+          borderColor: "brand.500",
         }}
       >
         <Input
@@ -30,11 +29,17 @@ const FloatingInput = ({ label, error, type = "text", ...props }) => {
           color={inputColor}
           h="52px"
           pt="22px"
+          border={"none"}
+          outline={"none"}
           pb="6px"
           fontSize={{ base: "sm", md: "md" }}
           _focus={{
             outline: "none",
             boxShadow: "none",
+          }}
+          _autofill={{
+            bgClip: "text",
+            bgColor: "transparent",
           }}
           css={{
             "&:focus + label, &:not(:placeholder-shown) + label": {

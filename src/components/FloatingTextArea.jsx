@@ -14,12 +14,11 @@ const FloatingTextarea = ({ label, error, ...props }) => {
         w="full"
         rounded="xl"
         overflow="hidden"
-        border="1px solid"
+        border="2px solid"
         borderColor={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
         bg={inputBg}
         _focusWithin={{
-          borderColor: "purple.500",
-          boxShadow: "0 0 0 1px var(--chakra-colors-purple-500)",
+          borderColor: "brand.500",
         }}
       >
         <Textarea
@@ -48,14 +47,12 @@ const FloatingTextarea = ({ label, error, ...props }) => {
           }}
         />
         <Text
-          bg={inputBg}
-          px="2px"
           as="label"
           position="absolute"
           left="16px"
           top="18px"
           color={labelColor}
-          fontSize="md"
+          fontSize="sm"
           pointerEvents="none"
           transition="all 0.15s ease"
           transformOrigin="left top"
