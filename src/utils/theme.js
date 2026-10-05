@@ -91,7 +91,7 @@ const customConfig = defineConfig({
   },
 
   globalCss: {
-    "html": {
+    "body": {
       bg: {
         base: "surface.light",
         _dark: "surface.dark",
